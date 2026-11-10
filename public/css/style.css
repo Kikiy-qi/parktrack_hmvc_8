@@ -1,0 +1,111 @@
+/* Custom Styles to complement Tailwind CSS */
+
+/* Focus states for accessibility (R-32) */
+*:focus-visible {
+    outline: 2px solid #3B82F6;
+    outline-offset: 2px;
+}
+
+/* Base custom resets if needed */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom hide for radio buttons but keeping accessibility */
+.peer-radio:focus-visible + div {
+    outline: 2px solid #3B82F6;
+    outline-offset: 2px;
+}
+
+/* Fix browser autofill white background in dark mode */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #0f172a inset !important;
+    -webkit-text-fill-color: #f8fafc !important;
+    caret-color: #f8fafc !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Light Mode Overrides */
+body.light-mode {
+    background-color: #e5e7eb !important;
+    color: #1e293b !important;
+}
+
+body.light-mode img[alt="ParkTrack Text"] {
+    filter: brightness(0);
+}
+
+body.light-mode input:-webkit-autofill,
+body.light-mode input:-webkit-autofill:hover, 
+body.light-mode input:-webkit-autofill:focus, 
+body.light-mode input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #ffffff inset !important;
+    -webkit-text-fill-color: #0f172a !important;
+    caret-color: #0f172a !important;
+}
+
+body.light-mode .bg-slate-800,
+body.light-mode [class*="bg-slate-800/"] {
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03) !important;
+}
+
+body.light-mode .bg-slate-900,
+body.light-mode [class*="bg-slate-900/"],
+body.light-mode .bg-slate-700,
+body.light-mode [class*="bg-slate-700/"] {
+    background-color: #f1f5f9 !important;
+}
+
+body.light-mode [class*="border-slate-700"],
+body.light-mode [class*="border-slate-600"],
+body.light-mode [class*="border-slate-500"] {
+    border-color: #cbd5e1 !important;
+}
+
+body.light-mode .text-slate-50,
+body.light-mode .text-white,
+body.light-mode [class*="text-slate-300"] {
+    color: #1e293b !important;
+}
+
+body.light-mode .bg-brand-500.text-white,
+body.light-mode .bg-brand-500 .text-white,
+body.light-mode .bg-green-600.text-white,
+body.light-mode .bg-green-600 .text-white,
+body.light-mode .bg-red-500.text-white,
+body.light-mode .bg-red-500 .text-white,
+body.light-mode .text-white.badge {
+    color: #ffffff !important;
+}
+
+body.light-mode .text-slate-400,
+body.light-mode .text-slate-500 {
+    color: #64748b !important;
+}
+
+body.light-mode .hover\:bg-slate-700:hover {
+    background-color: #e2e8f0 !important;
+}
+
+body.light-mode .hover\:border-slate-600:hover {
+    border-color: #94a3b8 !important;
+}
+
+body.light-mode input.bg-slate-900,
+body.light-mode select.bg-slate-900,
+body.light-mode textarea.bg-slate-900 {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    color: #1e293b !important;
+}
+
+/* Modals */
+body.light-mode .modal-content {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+}

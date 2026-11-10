@@ -1,0 +1,33 @@
+@extends('layouts.app')
+
+@section('title', 'Edit Pengguna - ParkTrack')
+
+@section('content')
+<div class="max-w-2xl mx-auto mb-12">
+    <div class="mb-4">
+        <a href="{{ route('admin.users.index') }}" class="text-sm text-slate-400 hover:text-white inline-flex items-center gap-1.5">
+            <i class="bi bi-arrow-left"></i> Kembali ke daftar pengguna
+        </a>
+        <h2 class="text-2xl font-bold text-white mt-2 flex items-center">
+            <i class="bi bi-person-gear text-brand-500 mr-2.5"></i>Edit Pengguna: {{ $user->name }}
+        </h2>
+    </div>
+
+    <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-lg">
+        <form action="{{ route('admin.users.update', $user) }}" method="POST">
+            @csrf
+            @method('PUT')
+            @include('usermanagement::partials.form', ['user' => $user])
+
+            <div class="flex justify-end gap-3 pt-4 border-t border-slate-700">
+                <a href="{{ route('admin.users.index') }}" class="border border-slate-600 text-slate-300 hover:text-white px-5 py-2.5 rounded-xl text-sm font-medium transition-colors">
+                    Batal
+                </a>
+                <button type="submit" class="bg-brand-500 hover:bg-brand-600 text-white font-bold px-6 py-2.5 rounded-xl text-sm transition-colors cursor-pointer shadow-lg shadow-brand-500/20">
+                    Simpan Perubahan
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+@endsection

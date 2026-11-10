@@ -1,0 +1,11 @@
+{
+    "name": "SlotParkir",
+    "alias": "slotparkir",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\SlotParkir\\Providers\\SlotParkirServiceProvider"
+    ],
+    "files": []
+}
